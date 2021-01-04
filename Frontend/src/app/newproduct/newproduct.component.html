@@ -1,0 +1,138 @@
+<nav class="navbar navbar-expand-lg navbar-dark " style=" background-color:#111166">
+
+ 
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   
+    <ul class="navbar-nav navbar-right">
+      <a class="nav-link"  routerLink="/"  >Home</a>
+      <a class="nav-link"  routerLink="/books" >Books</a>
+        <a class="nav-link"  routerLink="/authors"  >Authors</a>
+        <a class="nav-link"  routerLink="/login" *ngIf="!_auth.loggedIn()" routerLinkActive="active">Admin Panel</a>
+        <!-- <a class="nav-link"  style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="loggedUser()">Add New Book</a> -->
+        <!-- <a class="nav-link"  style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="loggedUser()">Add New Author</a> -->
+        <a class="nav-link"  style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="logoutUser()">Logout</a>
+    </ul>
+  </div>
+</nav>   
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>{{ pageTitle }}
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+              
+      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-12"> 
+      
+      <div class="panel">
+        <div class="panel-body">
+          <div class="container">
+    <form #book="ngForm" (ngSubmit)="book.form.valid && AddProduct()">
+
+<div class='card-body'>            
+  <div class='table-responsive'>
+    <table class='table'>       
+      <h3 style="text-align: center;">Fill Up the details</h3><br>
+      <tbody>  
+          <tr>
+              <td> <label>Book Title</label></td>
+              <td><input type="text" name="p_id" [(ngModel)]="productItem.title" required [formControl]="title" #namex  title="Must contain only letters and numbers"/></td>                  
+            </tr>   
+            <tr>
+                <td><label>Author</label></td>
+                <td><input type="text" name="p_name" [(ngModel)]="productItem.author" [formControl]="name" #namex required  title="Must contain only letters" /></td>                  
+              </tr>  
+              <tr>
+                <td><label>Genre</label></td>
+                <td><input type="text" name="p_code" [(ngModel)]="productItem.genre" required [formControl]="name" #namex title="Must contain only letters"/></td>                  
+              </tr>  
+             
+              <tr>
+                <td><label>ImageUrl</label></td>
+                <td><input type="text" name="p_image" [(ngModel)]="productItem.image"  required/></td>                  
+              </tr>  
+              <tr>
+                <td></td>
+                <td><input type="submit" class="btn btn-success" [disabled]="name.invalid || title.invalid || book.form.invalid" value="Submit" /></td>                  
+              </tr>             
+      </tbody>
+    </table>
+  </div>
+</div>
+</form>
+</div>
+        
+          
+</div>
+</div>
+                                                                               
+                                          
+                                              
+</div><!--/col-12-->
+</div>
+</div>
+                                        
+
+
+<div class="container" id="footer">
+<div class="row">
+<div class="col col-sm-12">
+
+<h1>Follow Us</h1>
+<div class="btn-group">
+<a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+<a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+<a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-sm-6">
+<ul class="list-inline">
+  <li><i class="icon-facebook icon-2x"></i></li>
+  <li><i class="icon-twitter icon-2x"></i></li>
+  <li><i class="icon-google-plus icon-2x"></i></li>
+  <li><i class="icon-pinterest icon-2x"></i></li>
+</ul>
+
+</div>
+<div class="col-sm-6">
+  <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
+</div>
+</div>
+</div>
+</footer>
+

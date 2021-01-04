@@ -1,0 +1,66 @@
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Admin Login
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+              
+      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-12"> 
+      
+      <div class="panel text-center" style="margin-top:2em ;">
+        <div class="panel-body">
+          <div class="container">
+          <h3>Enter Username and Password</h3>
+        </div>
+        <div class="card-body ">
+          <form   (ngSubmit)="loginUser()">
+            <!-- <label for="" #lblName  id="lblName" style="background-color: rgb(219, 78, 78);color: rgb(12, 12, 12);" >Username or Password Incorrect</label> -->
+            <div >
+              <label for="uname1" >Username:</label><br>
+              <input type="text" name="uname" [(ngModel)]="user.uname"/>
+           
+              </div>
+            <div style="margin-top:1em;">
+              <label>Password:   </label><br>
+              <input type="password" name="password" [(ngModel)]="user.password"/>
+              </div><br>
+            
+            <button type="submit" class="btn btn-success float-right"   >Login</button>
+          </form>                             
+        </div>
+        <!--/card-block-->
+      </div>
+      <!-- /form card login -->
+
+    </div>
+
+
+  </div>
+</div>
